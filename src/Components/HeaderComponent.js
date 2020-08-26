@@ -4,6 +4,7 @@ import Home from './HomeComponent';
 import Aboutme from './AboutmeComponent'
 import Certificate from './CertificateComponent';
 import Contact from './ContactComponent';
+import Hobbies from './HobbiesComponent';
 
 const Header = (props)=>{
      const contact = useRef(null);
@@ -31,10 +32,15 @@ const Header = (props)=>{
       <div id="home">
          <Home />
       </div>
+
       <div id="aboutme">
           <Aboutme  skills={props.skills} contactRef={contact} />
       </div>
-      
+
+      <div id="hobbies">
+          <Hobbies />
+      </div>
+
       <div id="certi">
          <Certificate certificates={props.certificates} />
       </div>
