@@ -35,6 +35,7 @@
     "react-redux-form": "^1.16.14",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "react-spotify-player": "^1.0.4",
     "react-wow": "^1.0.0",
     "reactstrap": "^8.5.1",
     "redux": "^4.0.5",

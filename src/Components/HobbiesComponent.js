@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
 import fifa from '../images/fifa.jpg';
+import  SpotifyPlayer from 'react-spotify-player';
+
+
 function Hobbies() {
 
     return (
@@ -23,6 +26,18 @@ function Hobbies() {
                        light={fifa} className="react-player"
                         url='https://www.youtube.com/watch?v=bUGKuaNUrKM&feature=youtu.be' />
                     </div> 
+                    <div className="col-12 mb-5">
+                        <h4>My <strong>Playlists</strong></h4>
+                    </div>
+                    <div className="col-4">
+                       <SpotifyPlayer uri="spotify:playlist:4i3s2KRT1qQfDIW1PkMcKL" theme="black"/>
+                    </div>
+                    <div className="col-4">
+                       <SpotifyPlayer uri="spotify:playlist:37i9dQZF1DX0BcQWzuB7ZO" theme="black" />
+                    </div>
+                    <div className="col-4">
+                       <SpotifyPlayer uri="spotify:playlist:06lYPASb7D72PFZBLzsPhr" theme="black"/>
+                    </div>
                 </div>
             </div>
         </section>
