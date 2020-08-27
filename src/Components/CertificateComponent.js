@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, CardTitle, CardSubtitle, CardBody, CardText } from 'reactstrap';
-import Footer from './FooterComponent'
 import certiphoto from '../images/certificate.png';
 
 
@@ -14,7 +13,7 @@ function RenderCertificate({certificates}){
                     <CardTitle className="certificate-name">{certificate.name}</CardTitle>
                     <CardSubtitle><p>{certificate.source}</p></CardSubtitle>
                 
-                <CardText><a className="certificate-link" href="#">Certificate Link <i className=" fa fa-chevron-right"></i> </a></CardText>
+                <CardText><a className="certificate-link" href={certificate.link}>Certificate Link <i className=" fa fa-chevron-right"></i> </a></CardText>
                 </CardBody>
             </Card>
         </div>

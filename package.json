@@ -19,6 +19,7 @@
     "body-parser": "^1.19.0",
     "bootstrap": "^4.5.0",
     "bootstrap-social": "^5.1.1",
+    "emailjs-com": "^2.6.3",
     "errorhandler": "^1.5.1",
     "express": "^4.17.1",
     "font-awesome": "^4.7.0",
@@ -39,6 +40,7 @@
     "react-wow": "^1.0.0",
     "reactstrap": "^8.5.1",
     "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
     "video-react": "^0.14.1",
     "wowjs": "^1.1.3"
   },

@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import Header from './HeaderComponent';
-import Home from './HomeComponent';
-import Aboutme from './AboutmeComponent'
-import Certificate from './CertificateComponent';
-import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import {connect} from 'react-redux';
-import Contact from './ContactComponent';
+import {actions} from 'react-redux-form'
 
 
 const mapStatetoProps = props =>{
@@ -14,6 +11,12 @@ const mapStatetoProps = props =>{
         certificates : props.certificates
     }
 }
+
+ const mapDispachtoProps = (dispatch) =>({
+    resetform : ()=> {dispatch(actions.reset('contactform'))}
+ })
+
+ 
 
 class Main extends Component {
 
@@ -26,12 +29,11 @@ class Main extends Component {
     render() {
         return (
             <div className="App">
-             <Header skills={this.props.skills}  certificates={this.props.certificates}/>
-
+             <Header skills={this.props.skills}  certificates={this.props.certificates} resetform={this.props.resetform}/>
             </div>
         );
     }
 }
 
 
-export default withRouter(connect(mapStatetoProps)(Main));
+export default withRouter(connect(mapStatetoProps, mapDispachtoProps)(Main));

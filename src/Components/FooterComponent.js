@@ -13,12 +13,12 @@ function Footer() {
   <div className="row">
                     <div className="col-12 pb-4">
                         <div className="text-center">
-                            <a className="px-2 media-icon" href="#"><i className="fa fa-github fa-lg icon"></i></a>
-                            <a className="px-2 media-icon" href="#"><i className="fa fa-linkedin fa-lg icon"></i></a>
+                            <a className="px-2 media-icon" href="https://github.com/vaibhavlm"><i className="fa fa-github fa-lg icon"></i></a>
+                            <a className="px-2 media-icon" href="https://www.linkedin.com/in/vaibhav-sinha-lm10/"><i className="fa fa-linkedin fa-lg icon"></i></a>
                             <a className="px-2 media-icon" href="http://google.com/+"><i className="fa fa-google fa-lg icon"></i></a>
-                            <a className="px-2 media-icon" href="#"><span className="iconify fa-lg icon" data-icon="simple-icons:hackerrank"></span></a>
-                            <a className="px-2 media-icon" href="#"><i className="fa fa-instagram fa-lg icon"></i></a>
-                            <a className="px-2 media-icon" href="#"><i className="fa fa-facebook fa-lg icon"></i></a>
+                            <a className="px-2 media-icon" href="https://www.hackerrank.com/vaibhavleo"><span className="iconify fa-lg icon" data-icon="simple-icons:hackerrank"></span></a>
+                            <a className="px-2 media-icon" href="https://www.instagram.com/vaihbav13/"><i className="fa fa-instagram fa-lg icon"></i></a>
+                            <a className="px-2 media-icon" href="https://www.facebook.com/vaibhavsinha123/"><i className="fa fa-facebook fa-lg icon"></i></a>
                         </div>
                     </div>
                 </div>

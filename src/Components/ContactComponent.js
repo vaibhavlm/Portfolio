@@ -1,13 +1,34 @@
 import React from 'react';
-import {Row, Col, Label, Button, Carousel} from 'reactstrap';
-import { Form, Errors, Control, LocalForm} from 'react-redux-form';
+import {Row, Col, Label, Button} from 'reactstrap';
+import {  Errors, Control, Form} from 'react-redux-form';
 import Footer from './FooterComponent';
+import * as emailjs from 'emailjs-com';
 
-const handleSubmit = value =>{
-    alert("User detail :" + JSON.stringify(value));
+const required = (val)=>  val && val.length;
+const isEmail = (val)=> /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
+const isNum = (val)=> !isNaN(Number(val));
+
+const handleSubmit = (value, resetform) =>{
+   
+   const template={
+     from_name: value.name,
+       to_name: 'Vaibhav',
+       message: JSON.stringify(value.message+". "+"Mobile no: "+ value.mobno)
+}
+  
+  emailjs
+  .send(
+      "gmail",
+      "goatleo",
+       template,
+       "user_gyiG7nKxuhNvcc2AGtyhX"
+  ).then(()=>{ window.alert('sent')
+  resetform()
+})
+   
 }
 
-function Contact(){
+function Contact(props){
     return(
         <section className="site-section" data-section="about">
         <div className="container">
@@ -19,24 +40,36 @@ function Contact(){
             </div>
             <div className="row">
                     <div className="col-12 col-md-7">
-                        <LocalForm onSubmit={(value)=> handleSubmit(value)}>
+                        <Form model="contactform" onSubmit={(value)=> handleSubmit(value, props.resetform)}>
                             <h4 className="mb-5">Get In Touch</h4>
                             <Row className="form-group">
                              <Col md={12}>
                                 <Label className="sr-only" htmlFor="name">Name</Label>
-                                <Control.text model=".name" id="name" placeholder="Name" className="form-control"/>
+                                <Control.text model=".name" id="name" placeholder="Name" className="form-control"
+                                validators={{required}}/>
+                                <Errors className="text-danger" model=".name" show="touched" messages={{
+                                      required: "Required"
+                                    }}/>
                              </Col>
                             </Row>  
                             <Row className="form-group">
                              <Col md={12}>
                                 <Label className="sr-only" htmlFor="email">Email</Label>
-                                <Control.text model=".email" id="email" placeholder="Email" className="form-control"/>
+                                <Control.text model=".email" id="email" placeholder="Email" className="form-control"
+                                validators={{required, isEmail}}/>
+                                <Errors className="text-danger" model=".email" show="touched" messages={{
+                                      required: 'Required',  isEmail: 'Not a valid Email'
+                                    }}/>
                              </Col>
                             </Row>  
                             <Row className="form-group">
                              <Col md={12}>
                                 <Label className="sr-only" htmlFor="mobno">Phone</Label>
-                                <Control.text model=".mobno" id="mobno" placeholder="Phone No." className="form-control"/>
+                                <Control.text model=".mobno" id="mobno" placeholder="Phone No." className="form-control"
+                                validators={{required, isNum}}/>
+                                <Errors className="text-danger" model=".mobno" show="touched" messages={{
+                                      required: 'Required', isNum: 'Enter a Number'
+                                    }}/>
                              </Col>
                             </Row>  
                             <Row className="form-group">
@@ -50,7 +83,7 @@ function Contact(){
                                 <Button className="btn btn-primary py-3 px-4">Send Message</Button>
                              </Col>
                             </Row>   
-                        </LocalForm>
+                        </Form>
                     </div>
                     <div className="col ml-md-5 pt-5 pt-md-0 details">
                         <h4>My Contact Details</h4>
@@ -60,10 +93,10 @@ function Contact(){
                             <p className="det-data">vaibhavleoanto@gmail.com</p>
                             </li>
                             <li><p className="det-heading">Phone <i className="fa fa-phone pl-1"></i></p>
-                            <p className="det-data">735552****  </p>
+                            <p className="det-data">7355520031</p>
                             </li>
                             <li><p className="det-heading">Address <i className="fa fa-address-card pl-1"></i></p>
-                            <p className="det-data">Flat No-510,<br/> Begumpur Rohini, <br/> New Delhi</p>
+                            <p className="det-data">MAIT,<br/> Begumpur Rohini, <br/> New Delhi</p>
                             </li>
                         </ul>
                         </div>

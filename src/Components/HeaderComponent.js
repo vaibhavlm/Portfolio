@@ -15,7 +15,7 @@ const Header = (props)=>{
         
           <nav className="navbar bg-light site-navbar navbar-expand-sm fixed-top" >
            <div className="container">
-               <a className="navbar-brand" href="#">Portfolio</a>
+               <a className="navbar-brand" href="#home">Portfolio</a>
                <NavbarToggler onClick={()=> toggleNav(!isNav)} />
                <Collapse isOpen={isNav} navbar>
                <ul class="navbar-nav mr-auto">
@@ -37,16 +37,16 @@ const Header = (props)=>{
           <Aboutme  skills={props.skills} contactRef={contact} />
       </div>
 
-      <div id="hobbies">
-          <Hobbies />
-      </div>
-
       <div id="certi">
          <Certificate certificates={props.certificates} />
       </div>
       
+      <div id="hobbies">
+          <Hobbies />
+      </div>
+      
       <div id="contact" ref={contact}>
-         <Contact  />
+         <Contact resetform={props.resetform}  />
       </div>
       </React.Fragment>
 

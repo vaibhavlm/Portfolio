@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import { MDBCarousel, MDBCarouselItem, MDBCarouselInner, MDBCarouselCaption, MDBView } from 'mdbreact';
 
 
 const Home = () => {
