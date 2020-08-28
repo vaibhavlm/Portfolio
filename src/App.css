@@ -61,6 +61,10 @@
  .bg-light{
    background: #ccc !important;}
 
+   .navbar-toggler:hover , .navbar-toggler:focus{
+    background: transparent !important;
+    }
+    
  @media screen and (max-width: 900px) {
   .bg-light {
     background: #ccc !important;
@@ -439,3 +443,5 @@
           .text-white{
             color: floralwhite
           }
+
+          
